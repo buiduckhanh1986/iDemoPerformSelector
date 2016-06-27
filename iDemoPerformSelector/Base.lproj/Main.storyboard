@@ -1,25 +1,90 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="YhO-nB-MQa">
+                                <rect key="frame" x="22" y="70" width="331" height="31"/>
+                            </slider>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="88T-Cw-iyP">
+                                <rect key="frame" x="100" y="190" width="175" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="IKZ-vr-3yn"/>
+                                    <constraint firstAttribute="width" constant="100" id="vUA-U4-hYB"/>
+                                </constraints>
+                                <state key="normal" title="Perform In Background"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="vUA-U4-hYB"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="onPerformInBackgroundTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="d2z-b0-4R8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bcy-fP-faQ">
+                                <rect key="frame" x="120" y="290" width="136" height="30"/>
+                                <state key="normal" title="Perform After Delay"/>
+                                <connections>
+                                    <action selector="onPerformAfterDelayTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1k3-Ck-hhf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Av-3C-DiG">
+                                <rect key="frame" x="93" y="345" width="188" height="30"/>
+                                <state key="normal" title="Perform With Object Param"/>
+                                <connections>
+                                    <action selector="onPerformWithObjectTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ysL-aV-HaK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rMb-dZ-Uw3">
+                                <rect key="frame" x="101" y="240" width="174" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="174" id="6OE-56-YWA"/>
+                                </constraints>
+                                <state key="normal" title="Perform In Main Thread"/>
+                                <connections>
+                                    <action selector="onPerformInMainThreadTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yn0-qG-0Xa"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="88T-Cw-iyP" firstAttribute="top" secondItem="YhO-nB-MQa" secondAttribute="bottom" constant="90" id="4WJ-DS-4mO"/>
+                            <constraint firstItem="YhO-nB-MQa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="8" id="4ne-Az-Z8n"/>
+                            <constraint firstItem="rMb-dZ-Uw3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Mtg-lF-63a"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="YhO-nB-MQa" secondAttribute="trailing" constant="8" id="MuS-VI-Eys"/>
+                            <constraint firstItem="bcy-fP-faQ" firstAttribute="top" secondItem="rMb-dZ-Uw3" secondAttribute="bottom" constant="20" id="V6G-hR-6WI"/>
+                            <constraint firstItem="bcy-fP-faQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hYT-3m-HqX"/>
+                            <constraint firstItem="YhO-nB-MQa" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="qus-IC-jvP"/>
+                            <constraint firstItem="6Av-3C-DiG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tGD-uz-SsZ"/>
+                            <constraint firstItem="rMb-dZ-Uw3" firstAttribute="top" secondItem="88T-Cw-iyP" secondAttribute="bottom" constant="20" id="tac-jS-Ven"/>
+                            <constraint firstItem="6Av-3C-DiG" firstAttribute="top" secondItem="bcy-fP-faQ" secondAttribute="bottom" constant="25" id="vML-k0-svT"/>
+                            <constraint firstItem="88T-Cw-iyP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="y1G-EP-TUv"/>
+                        </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="slider" destination="YhO-nB-MQa" id="GfW-bf-OOV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="244.5" y="305.5"/>
         </scene>
     </scenes>
 </document>
